@@ -1,0 +1,83 @@
+
+💡 **Q.1** What are hooks in react? how to identify hooks?
+answer-React Hooks are simple JavaScript functions that we can use to isolate the reusable 
+part from a functional component. Hooks can be stateful and can manage side-effects. 
+React provides a bunch of standard in-built hooks: useState : To manage states
+There are 3 rules for hooks:
+Hooks can only be called inside React function components.
+Hooks can only be called at the top level of a component.
+Hooks cannot be conditional.
+
+
+💡 **Q.2** Explain useState Hook & what can you achieve with it?
+answer-useState is React Hook that allows you to add state to a functional
+ component. It returns an array with two values: the current state and a
+  function to update it. The Hook takes an initial state value as an argument
+   and returns an updated state value whenever the setter function is called.
+useState is React Hook that allows you to add state to a functional component.
+ It returns an array with two values: the current state and a function to 
+ update it. The Hook takes an initial state value as an argument and returns 
+ an updated state value whenever the setter function is called
+
+
+💡 **Q.3** How to pass data from one component to another component
+answer-Passing data from Child to Parent Component:
+
+For passing the data from the child component to the parent component, 
+we have to create a callback function in the parent component and then pass 
+the callback function to the child component as a prop. This callback function
+will retrieve the data from the child component. The child component calls 
+the parent callback function using props and passes the data to the parent
+component.
+
+Passing data between Siblings:
+
+For passing data among siblings, there are multiple methods we can choose from as shown below:
+Combination of the above two methods (callback and use of props).
+Using Redux.
+ContextAPI
+
+
+
+💡 **Q.4** What is the significance of the "key" prop in React lists, and why is it important
+ to use it correctly?
+answer-A key is a unique attribute that needs to be included in lists. It is important in the
+aspect of re-rendering collections. In simple words, React uses keys to pinpoint which of the
+element in the list collection is changed and needs to be re-rendered instead of re-rendering
+the whole collection.
+A key is a special string attribute you should include when creating arrays of elements.
+ Key prop helps React identify which items have changed, are added, or are removed. Most
+  often we use ID from our data as key: const todoItems = todos.
+
+
+💡 **Q.5** What is the significance of using "setState" instead of modifying state directly in React?
+answer-Always use the setState() method to change the state object, since it will ensure that the component knows it's been updated and calls the render() method.
+ 1) A state can be modified based on user action or network changes
+ 2) Every time the state of an object changes, React re-renders the component to the browser
+ 3) The state object is initialized in the constructor
+ 4) The state object can store multiple properties
+ 5) this.setState() is used to change the value of the state object
+ 6) setState() function performs a shallow merge between the new and the previous state
+
+
+💡  **Q.6** Explain the concept of React fragments and when you should use them.
+answer-​ React Fragment is a feature in React that allows you to return multiple elements from a React component by allowing you to group a list of children without adding extra nodes to the DOM. To return multiple elements from a React component, you'll need to wrap the element in a root element.
+
+How do we create a fragment in react JS:
+Example:
+
+1) Function = (props) {
+2) return (
+3) <Fragment>
+4) {props.items.data.map(item => (
+5) // Without the 'key', React will give a key warning.
+6) <React.Fragment key={item.id}>
+7) <h2>{item.name}</h2>
+8) <p>{item.url}</p>
+
+
+💡 **Q.7** How do you handle conditional rendering in React?
+answer-Conditional rendering in React works the same way conditions work in JavaScript.
+ Use JavaScript operators like if or the conditional operator to create elements representing 
+ the current state, and let React update the UI to match them. This example renders a different
+  greeting depending on the value of isLoggedIn prop.
